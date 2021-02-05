@@ -18,5 +18,8 @@
   "devDependencies": {
     "@babel/core": "~7.9.0"
   },
-  "private": true
+  "private": true,
+  "android": {
+    "package": "com.ramacode.roller"
+  }
 }
