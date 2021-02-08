@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ResultContext } from '../../../context/ResultContext'
-
+import * as Haptics from 'expo-haptics';
 
 export default function Dice({ number }) {
 
@@ -10,8 +10,10 @@ export default function Dice({ number }) {
 
 
     const random = max => {
-        setResult(Math.floor(Math.random() * max + 1))
-        addPrevious(result)
+        // Haptics.selectionAsync()
+        const newResult = Math.floor(Math.random() * max + 1)
+        setResult(newResult)
+        addPrevious(newResult)
     }
 
     return (
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
     play: {
         backgroundColor: '#f2d7d5',
         width: deviceWidth / 2 - 30,
-        height: deviceHeight/6,
+        height: deviceHeight / 6,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0, .4)', // IOS

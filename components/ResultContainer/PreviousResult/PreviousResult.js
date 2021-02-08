@@ -8,7 +8,8 @@ export default function PreviousResult({ number, size, marginB }) {
 
     return (
         <View style={styles.resultDisplay}>
-            <Text style={{ ...styles.display, fontSize: size, marginBottom: marginB }}>{previousResult[number]}</Text>
+            <Text style={{ ...styles.display, fontSize: size, marginBottom: marginB }}>
+                {previousResult[number]}</Text>
         </View>
     );
 }
@@ -16,7 +17,6 @@ export default function PreviousResult({ number, size, marginB }) {
 const styles = StyleSheet.create({
     resultDisplay: {
         marginRight: 10,
-        justifyContent: 'flex-end',
     },
     display: {
         color: 'grey'
